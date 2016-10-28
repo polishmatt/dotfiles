@@ -14,7 +14,7 @@ PS1='\u@\[$green\]\h\[$reset\]:\w\[$blue\]$(__git_ps1)\[$reset\] \$ '
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-export LS_OPTIONS='--color=always'
+alias ls='ls --color=always'
 LS_COLORS=$LS_COLORS:'di=0;34:'
 export LS_COLORS
 export GREP_OPTIONS='--color=always'

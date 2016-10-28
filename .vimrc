@@ -4,12 +4,12 @@ set ruler
 set nobackup
 set nowritebackup
 set noswapfile
-set title "shell window title
-set showcmd "info about current command
+set title " shell window title
+set showcmd " info about current command
 set noeb vb t_vb= " no beep
 set mouse= " no mouse
 
-"  indentation
+" indentation
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4

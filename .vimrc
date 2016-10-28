@@ -26,13 +26,16 @@ syntax on
 colorscheme ron
 
 " shortcuts
-:let maplocalleader = "\\"
-set pastetoggle=<localleader>p
-" new tab
-nnoremap tn  :tabnew<Space>
 " don't exit visual mode when shifting
 vnoremap < <gv
 vnoremap > >gv
+
+:let mapleader = ","
+set pastetoggle=<leader>p
+" new tab
+nnoremap <leader>t :tabnew<Space>
+
+:let maplocalleader = "\\"
 " comments
 :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
 :autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>

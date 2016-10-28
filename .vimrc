@@ -37,8 +37,8 @@ vnoremap > >gv
 :autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
 :autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
 " debug
-:autocmd FileType javascript nnoremap <buffer> <localleader>d debugger;<Enter>
-:autocmd FileType python     nnoremap <buffer> <localleader>d import pdb; pdb.set_trace()<Enter>
+:autocmd FileType javascript nnoremap <buffer> <localleader>d Idebugger;<Enter>
+:autocmd FileType python     nnoremap <buffer> <localleader>d Iimport pdb; pdb.set_trace()<Enter>
 " if
 :autocmd FileType python     :iabbrev <buffer> iff if:<left>
 :autocmd FileType javascript :iabbrev <buffer> iff if ()<left>

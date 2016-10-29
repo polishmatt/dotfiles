@@ -47,8 +47,8 @@ autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
 autocmd FileType javascript nnoremap <buffer> <localleader>d Idebugger;<Enter>
 autocmd FileType python     nnoremap <buffer> <localleader>d Iimport pdb; pdb.set_trace()<Enter>
 " if
-autocmd FileType javascript inoremap <leader>if if () {<CR><CR>}<up><up><right><right><right>
-autocmd FileType python     inoremap <leader>if if:<left>
+autocmd FileType javascript inoremap <localleader>f if () {<CR><CR>}<up><up><right><right><right>
+autocmd FileType python     inoremap <localleader>f if:<left>
 
 " search
 set incsearch " find as you type

@@ -20,3 +20,6 @@ export LS_COLORS
 export GREP_OPTIONS='--color=always'
 export GREP_COLORS='sl=33:fn=35:ms=01;36'
 
+alias dutop='du -hsx * | sort -rh | head -n10'
+alias weather='curl -s wttr.in/ny | head -n17'
+

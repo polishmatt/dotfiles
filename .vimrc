@@ -30,27 +30,30 @@ colorscheme ron
 vnoremap < <gv
 vnoremap > >gv
 
-:let mapleader = ","
+nnoremap ,, ,
+let mapleader = ","
 set pastetoggle=<leader>p
 " new tab
 nnoremap <leader>t :tabnew<Space>
 
 :let maplocalleader = "\\"
 " comments
-:autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
-:autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
 " debug
-:autocmd FileType javascript nnoremap <buffer> <localleader>d Idebugger;<Enter>
-:autocmd FileType python     nnoremap <buffer> <localleader>d Iimport pdb; pdb.set_trace()<Enter>
+autocmd FileType javascript nnoremap <buffer> <localleader>d Idebugger;<Enter>
+autocmd FileType python     nnoremap <buffer> <localleader>d Iimport pdb; pdb.set_trace()<Enter>
 " if
-:autocmd FileType python     :iabbrev <buffer> iff if:<left>
-:autocmd FileType javascript :iabbrev <buffer> iff if ()<left>
+autocmd FileType javascript inoremap <leader>if if () {<CR><CR>}<up><up><right><right><right>
+autocmd FileType python     inoremap <leader>if if:<left>
 
 " search
 set incsearch " find as you type
 set hlsearch " highlight
 " clear search
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
+" search for selection
+vnoremap <leader>s y/<C-R>"<CR>
 
 " auto complete
 " this needs some work - autocompletes at the start of a line instead of
@@ -78,7 +81,9 @@ endfunction
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 " run command on write
-" autocmd BufWritePost */pattern/* silent !command restart
+" supported by silent exec with redraw so display doesn't bug out
+command! -nargs=1 Qexec execute ':silent !'.<q-args> | execute ':redraw!'
+" autocmd BufWritePost */pattern/* Qexec command
 
 " indent guides could be nice
 

@@ -1,3 +1,4 @@
+. $HOME/.profile
 
 if [ -f $HOME/.git-completion.bash ]; then
     . $HOME/.git-completion.bash

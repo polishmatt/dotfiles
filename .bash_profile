@@ -13,6 +13,7 @@ PS1='\u@\[$green\]\h\[$reset\]:\w\[$blue\]$(__git_ps1)\[$reset\] \$ '
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+set -o vi
 
 alias ls='ls --color=always'
 LS_COLORS=$LS_COLORS:'di=0;34:'

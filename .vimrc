@@ -1,25 +1,28 @@
 
 set showmatch  " show matching brackets/parentheses
 set ruler
-set nobackup
-set nowritebackup
-set noswapfile
 set title " shell window title
 set showcmd " info about current command
 set noeb vb t_vb= " no beep
 set mouse= " no mouse
 
+" no backups
+set nobackup
+set nowritebackup
+set noswapfile
+
 " indentation
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
-set expandtab
-autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
-autocmd FileType html :setlocal sw=2 ts=2 sts=2
-autocmd FileType css :setlocal sw=2 ts=2 sts=2
+set backspace=indent,eol,start
+autocmd FileType javascript setlocal sw=2 ts=2 sts=2
+autocmd FileType html setlocal sw=2 ts=2 sts=2
+autocmd FileType css setlocal sw=2 ts=2 sts=2
 autocmd BufEnter *.less set syntax=css
 autocmd BufEnter *.less setlocal sw=2 ts=2 sts=2
 set autoindent
+set expandtab
 
 " color
 syntax on
@@ -36,7 +39,7 @@ set pastetoggle=<leader>p
 " new tab
 nnoremap <leader>t :tabnew<Space>
 
-:let maplocalleader = "\\"
+let maplocalleader = "\\"
 " comments
 autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
 autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>

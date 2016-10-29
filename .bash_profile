@@ -1,7 +1,10 @@
-PATH=$PATH:~/bin
 
-if [ -f ~/.git-completion.bash ]; then
-    . ~/.git-completion.bash
+if [ -d $HOME/bin ]; then
+    PATH=$PATH:$HOME/bin
+fi
+
+if [ -f $HOME/.git-completion.bash ]; then
+    . $HOME/.git-completion.bash
 fi
 
 green=$(tput setaf 2)

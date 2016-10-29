@@ -8,11 +8,11 @@ if [ -f $HOME/.git-prompt.sh ]; then
 fi
 
 green=$(tput setaf 2)
-blue=$(tput setaf 4)
+yellow=$(tput setaf 3)
 bold=$(tput bold)
 red=$(tput setaf 1)
 reset=$(tput sgr0)
-PS1='\u@\[$green\]\h\[$reset\]:\w\[$blue\]$(__git_ps1)\[$reset\] \$ '
+PS1='\u@\[$green\]\h\[$reset\]:\w\[$yellow\]$(__git_ps1)\[$reset\] \$ '
 
 alias ls='ls --color=always'
 

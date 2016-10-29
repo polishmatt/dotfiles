@@ -26,7 +26,7 @@ set expandtab
 
 " color
 syntax on
-colorscheme ron
+color peachpuff
 
 " shortcuts
 " don't exit visual mode when shifting

@@ -26,7 +26,7 @@ set expandtab
 
 " color
 syntax on
-color peachpuff
+color koehler
 
 " shortcuts
 " don't exit visual mode when shifting

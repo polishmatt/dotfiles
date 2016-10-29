@@ -1,4 +1,8 @@
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+set -o vi
+
 if [ -d $HOME/bin ]; then
     PATH=$PATH:$HOME/bin
 fi
@@ -13,10 +17,6 @@ bold=$(tput bold)
 red=$(tput setaf 1)
 reset=$(tput sgr0)
 PS1='\u@\[$green\]\h\[$reset\]:\w\[$blue\]$(__git_ps1)\[$reset\] \$ '
-
-export VISUAL=vim
-export EDITOR="$VISUAL"
-set -o vi
 
 alias ls='ls --color=always'
 LS_COLORS=$LS_COLORS:'di=0;34:'

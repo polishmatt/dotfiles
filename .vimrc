@@ -22,6 +22,7 @@ autocmd FileType css setlocal sw=2 ts=2 sts=2
 autocmd BufEnter *.less set syntax=css
 autocmd BufEnter *.less setlocal sw=2 ts=2 sts=2
 set autoindent
+set smartindent
 set expandtab
 
 " color

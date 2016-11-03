@@ -27,6 +27,8 @@ set expandtab
 
 " color
 syntax on
+" peachpuff/desert/ron are nice but unreadable in some environments
+" this is a good default
 color koehler
 
 " shortcuts

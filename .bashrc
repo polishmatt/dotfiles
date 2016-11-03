@@ -20,3 +20,7 @@ alias ls='ls --color=always'
 alias dutop='du -hsx * | sort -rh | head -n10'
 alias weather='curl -s wttr.in/ny | head -n17'
 
+if [ -f $HOME/.bash_local ]; then
+    . $HOME/.bash_local
+fi
+

@@ -88,7 +88,7 @@ inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 " run command on write
 " supported by silent exec with redraw so display doesn't bug out
-command! -nargs=1 Qexec execute ':silent !'.<q-args> | execute ':redraw!'
+command! -nargs=1 Qexec execute ':silent !'.<q-args>.' > /dev/null &' | execute ':redraw!'
 " autocmd BufWritePost */pattern/* Qexec command
 
 " indent guides could be nice

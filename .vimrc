@@ -22,10 +22,13 @@ autocmd FileType css setlocal sw=2 ts=2 sts=2
 autocmd BufEnter *.less set syntax=css
 autocmd BufEnter *.less setlocal sw=2 ts=2 sts=2
 set autoindent
+set smartindent
 set expandtab
 
 " color
 syntax on
+" peachpuff/desert/ron are nice but unreadable in some environments
+" this is a good default
 color koehler
 
 " shortcuts
@@ -85,7 +88,7 @@ inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 
 " run command on write
 " supported by silent exec with redraw so display doesn't bug out
-command! -nargs=1 Qexec execute ':silent !'.<q-args> | execute ':redraw!'
+command! -nargs=1 Qexec execute ':silent !'.<q-args>.' > /dev/null &' | execute ':redraw!'
 " autocmd BufWritePost */pattern/* Qexec command
 
 " indent guides could be nice

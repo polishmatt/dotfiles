@@ -29,6 +29,10 @@ git() {
     command git "$@"
 }
 
+filter() {
+    { { $@; } 2>&3 | sed 's/^/STDOUT: /'; } 3>&1 1>&2 | sed 's/^/STDERR: /'
+}
+
 if [ -f $HOME/.bash_local ]; then
     . $HOME/.bash_local
 fi

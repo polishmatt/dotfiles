@@ -21,6 +21,8 @@ autocmd FileType html setlocal sw=2 ts=2 sts=2
 autocmd FileType css setlocal sw=2 ts=2 sts=2
 autocmd BufEnter *.less set syntax=css
 autocmd BufEnter *.less setlocal sw=2 ts=2 sts=2
+autocmd BufEnter *.ts set syntax=javascript
+autocmd BufEnter *.ts setlocal sw=2 ts=2 sts=2
 set autoindent
 set smartindent
 set expandtab
@@ -94,4 +96,11 @@ command! -nargs=1 Qexec execute ':silent !'.<q-args>.' > /dev/null &' | execute 
 " autocmd BufWritePost */pattern/* Qexec command
 
 " indent guides could be nice
+
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_on_enter = 1
+let g:ale_linters = {
+\    'typescript' : ['tsserver'],
+\} " https://github.com/w0rp/ale/tree/master/ale_linters
 

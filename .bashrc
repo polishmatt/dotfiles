@@ -33,7 +33,24 @@ streams() {
     { { $@; } 2>&3 | sed 's/^/STDOUT: /'; } 3>&1 1>&2 | sed 's/^/STDERR: /'
 }
 
+__srep_escape() {
+    echo "$@" | sed s/\\\//\\\\\\//
+}
+srep() {
+    expression=$(__srep_escape $1)
+    replacement=$(__srep_escape $2)
+    path="$3"
+    if [[ "$path" == "" ]]; then
+        path="."
+    fi
+    name="$4"
+    if [[ "$name" != "" ]]; then
+        name=" -name $name"
+    fi
+
+    find $path -type f$name -exec perl -p -i -e s/$expression/$replacement/ {} +
+}
+
 if [ -f $HOME/.bash_local ]; then
     . $HOME/.bash_local
 fi
-
